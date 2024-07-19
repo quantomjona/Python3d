@@ -1,0 +1,3 @@
+#define icon-is_width 1
+#define icon-is_height 1
+static char icon-is_bits[]={0x2588};
