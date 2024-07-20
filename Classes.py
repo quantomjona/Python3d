@@ -52,7 +52,7 @@ class triangle:
             P2=vec3d(p2[0],p2[1],p2[2])
         if(type(p3)==list):
             P3=vec3d(p3[0],p3[1],p3[2])
-        self.t=t
+        self.t=t[:]
         self.p = [P1, P2, P3]
         self.sym = sym
         self.col = Color

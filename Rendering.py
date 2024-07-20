@@ -459,11 +459,12 @@ class ThreeDimensionalProjection:
         matWorld=self.MultiplyMatrices(self.matRotX,self.matRotZ)
         matWorld=self.MultiplyMatrices(matWorld,matTrans)
         for tri in triangles.tris:
+            print(tri.t[0].v)
             # if(len(trisToProject.tris)>0):
             #     print(trisToProject)
 
             triTransformed=triangle(vec3d(),vec3d(),vec3d(),t=[vec2d(),vec2d(),vec2d()])
-            triTransformed.p[0]= self.MultiplieMatrixVector(mat2=matWorld, vect1=tri.p[0]);
+            triTransformed.p[0]= self.MultiplieMatrixVector(mat2=matWorld, vect1=tri.p[0])
             triTransformed.p[1]=self.MultiplieMatrixVector(mat2=matWorld,vect1= tri.p[1])
             triTransformed.p[2] =self.MultiplieMatrixVector(mat2=matWorld,vect1= tri.p[2])
             triTransformed.id=tri.id
