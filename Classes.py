@@ -7,8 +7,7 @@ class sprite:
         self.width=self.image.width
         self.height=self.image.height
     def GetColour(self,i,j):
-        i=min(1,i)
-        j=min(1,j)
+
         return self.image.getpixel([i*self.width-1,j*self.height-1])
 
 

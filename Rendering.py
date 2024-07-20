@@ -9,7 +9,7 @@ from Classes import *
 from pygame.locals import *
 from debugging import *
 import subprocess
-
+from copy import deepcopy
 pygame.init()
 
 
@@ -351,8 +351,8 @@ class ThreeDimensionalProjection:
         return [self.VectorAdd(lineStart, lineToIntersect),t]
 
 
-    def TriangleClipAgainstPlane(self, plane_p, plane_n, in_tri, out_tris):
-
+    def TriangleClipAgainstPlane(self, plane_p, plane_n, In_tri, out_tris):
+        in_tri=deepcopy(In_tri)
         plane_n=self.NormalizeVector(plane_n)
         dist = lambda p: plane_n.x * p.x + plane_n.y * p.y + plane_n.z * p.z - self.DotProduct(plane_n, plane_p)
 
@@ -459,7 +459,6 @@ class ThreeDimensionalProjection:
         matWorld=self.MultiplyMatrices(self.matRotX,self.matRotZ)
         matWorld=self.MultiplyMatrices(matWorld,matTrans)
         for tri in triangles.tris:
-            print(tri.t[0].v)
             # if(len(trisToProject.tris)>0):
             #     print(trisToProject)
 
@@ -513,6 +512,7 @@ class ThreeDimensionalProjection:
                 clipped = [triangle(vec3d(),vec3d(),vec3d(),[vec2d(),vec2d(),vec2d()]) for j in range(2)]
                 n_clippedTriangles = self.TriangleClipAgainstPlane(vec3d(0, 0, 0.01), vec3d(0, 0, 1),triViewed, clipped)
                 triProjected = triangle(vec3d(),vec3d(),vec3d(),[vec2d(),vec2d(),vec2d()])
+                print(triangles.tris[0])
                 for n in range(n_clippedTriangles):
                     triProjected=triangle(vec3d(),vec3d(),vec3d(),[vec2d(),vec2d(),vec2d()])
                     triProjected.p[0]= self.MultiplieMatrixVector(clipped[n].p[0], self.MatProj)
