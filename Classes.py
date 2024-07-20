@@ -7,13 +7,16 @@ class sprite:
         self.width=self.image.width
         self.height=self.image.height
     def GetColour(self,i,j):
+        i=min(1,i)
+        j=min(1,j)
         return self.image.getpixel([i*self.width-1,j*self.height-1])
 
 
 class vec2d:
-    def __init__(self,u:float=0,v:float=0):
+    def __init__(self,u:float=0,v:float=0,w=1):
         self.u=u
         self.v=v
+        self.w=w
     def __str__(self):
         return str((self.u,self.v))
 
@@ -39,7 +42,7 @@ class vec3d:
 
 
 class triangle:
-    def __init__(self, p1=vec3d(), p2=vec3d(), p3=vec3d(), sym="gray75", Color="White",id=0,t=[vec2d(),vec2d(),vec2d()]):
+    def __init__(self, p1, p2, p3,t,sym="gray75", Color="White",id=0):
         P1=p1
         P2=p2
         P3=p3

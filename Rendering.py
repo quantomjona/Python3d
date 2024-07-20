@@ -24,25 +24,25 @@ triangleTexture=sprite(img)
 triangles=mesh()
 triangles.tris=[
 
-		triangle([0.0, 0.0, 0.0],    [0.0, 1.0, 0.0],    [1.0, 1.0, 0.0],Color="cyan", t=[vec2d(0,1),vec2d(0,0),vec2d(1,0)]),
-		triangle([0.0, 0.0, 0.0],    [1.0, 1.0, 0.0],    [1.0, 0.0, 0.0],Color="green",t=[vec2d(0,1),vec2d(1,0),vec2d(1,1)]),
-		triangle([1.0, 0.0, 0.0]    ,[1.0, 1.0, 0.0],    [1.0, 1.0, 1.0 ],Color="red", t=[vec2d(0,1),vec2d(0,0),vec2d(1,0)])
+		triangle([0.0, 0.0, 0.0],    [0.0, 1.0, 0.0],    [1.0, 1.0, 0.0],Color="cyan", t=[vec2d(0,1),vec2d(0,0),vec2d(1,0,1)]),
+		triangle([0.0, 0.0, 0.0],    [1.0, 1.0, 0.0],    [1.0, 0.0, 0.0],Color="green",t=[vec2d(0,1),vec2d(1,0),vec2d(1,1,1)]),
+		triangle([1.0, 0.0, 0.0]    ,[1.0, 1.0, 0.0],    [1.0, 1.0, 1.0 ],Color="red", t=[vec2d(0,1),vec2d(0,0),vec2d(1,0,1)])
 
-		,triangle([1.0, 0.0, 0.0],    [1.0, 1.0, 1.0],    [1.0, 0.0, 1.0 ],Color="purple",t=[vec2d(0,1),vec2d(1,0),vec2d(1,1)])
-		,triangle([1.0, 0.0, 1.0],    [1.0, 1.0, 1.0],    [0.0, 1.0, 1.0 ],Color="blue", t=[vec2d(0,1),vec2d(0,0),vec2d(1,0)])
-		,triangle([1.0, 0.0, 1.0],    [0.0, 1.0, 1.0],   [ 0.0, 0.0, 1.0 ],Color="yellow",t=[vec2d(0,1),vec2d(1,0),vec2d(1,1)])
+		,triangle([1.0, 0.0, 0.0],    [1.0, 1.0, 1.0],    [1.0, 0.0, 1.0 ],Color="purple",t=[vec2d(0,1,1),vec2d(1,0,1),vec2d(1,1,1)])
+		,triangle([1.0, 0.0, 1.0],    [1.0, 1.0, 1.0],    [0.0, 1.0, 1.0 ],Color="blue", t=[vec2d(0,1,1),vec2d(0,0,1),vec2d(1,0,1)])
+		,triangle([1.0, 0.0, 1.0],    [0.0, 1.0, 1.0],   [ 0.0, 0.0, 1.0 ],Color="yellow",t=[vec2d(0,1,1),vec2d(1,0,1),vec2d(1,1,1)])
 
 
-		,triangle([0.0, 0.0, 1.0],    [0.0, 1.0, 1.0],    [0.0, 1.0, 0.0 ],Color="orange", t=[vec2d(0,1),vec2d(0,0),vec2d(1,0)])
-		,triangle([0.0, 0.0, 1.0],    [0.0, 1.0, 0.0],    [0.0, 0.0, 0.0],Color="pink",t=[vec2d(0,1),vec2d(1,0),vec2d(1,1)])
+		,triangle([0.0, 0.0, 1.0],    [0.0, 1.0, 1.0],    [0.0, 1.0, 0.0 ],Color="orange", t=[vec2d(0,1,1),vec2d(0,0,1),vec2d(1,0,1)])
+		,triangle([0.0, 0.0, 1.0],    [0.0, 1.0, 0.0],    [0.0, 0.0, 0.0],Color="pink",t=[vec2d(0,1,1),vec2d(1,0,1),vec2d(1,1,1)])
 
         ,
-		triangle([0.0, 1.0, 0.0],   [0.0, 1.0, 1.0], [   1.0, 1.0, 1.0 ],Color="green", t=[vec2d(0,1),vec2d(0,0),vec2d(1,0)]),
-		triangle([0.0, 1.0, 0.0],    [1.0, 1.0, 1.0],   [ 1.0, 1.0, 0.0 ],t=[vec2d(0,1),vec2d(1,0),vec2d(1,1)]),
+		triangle([0.0, 1.0, 0.0],   [0.0, 1.0, 1.0], [   1.0, 1.0, 1.0 ],Color="green", t=[vec2d(0,1,1),vec2d(0,0,1),vec2d(1,0,1)]),
+		triangle([0.0, 1.0, 0.0],    [1.0, 1.0, 1.0],   [ 1.0, 1.0, 0.0 ],t=[vec2d(0,1,1),vec2d(1,0,1),vec2d(1,1,1)]),
 
 
-		 triangle([1.0, 0.0, 1.0],    [0.0, 0.0, 1.0],   [ 0.0, 0.0, 0.0 ], t=[vec2d(0,1),vec2d(0,0),vec2d(1,0)]),
-		 triangle([1.0, 0.0, 1.0],   [ 0.0, 0.0, 0.0],   [ 1.0, 0.0, 0.0],t=[vec2d(0,1),vec2d(1,0),vec2d(1,1)])
+		 triangle([1.0, 0.0, 1.0],    [0.0, 0.0, 1.0],   [ 0.0, 0.0, 0.0 ], t=[vec2d(0,1,1),vec2d(0,0,1),vec2d(1,0,1)]),
+		 triangle([1.0, 0.0, 1.0],   [ 0.0, 0.0, 0.0],   [ 1.0, 0.0, 0.0],t=[vec2d(0,1,1),vec2d(1,0,1),vec2d(1,1,1)])
 ]
 clock = pygame.time.Clock()
 
@@ -462,7 +462,7 @@ class ThreeDimensionalProjection:
             # if(len(trisToProject.tris)>0):
             #     print(trisToProject)
 
-            triTransformed=triangle()
+            triTransformed=triangle(vec3d(),vec3d(),vec3d(),t=[vec2d(),vec2d(),vec2d()])
             triTransformed.p[0]= self.MultiplieMatrixVector(mat2=matWorld, vect1=tri.p[0]);
             triTransformed.p[1]=self.MultiplieMatrixVector(mat2=matWorld,vect1= tri.p[1])
             triTransformed.p[2] =self.MultiplieMatrixVector(mat2=matWorld,vect1= tri.p[2])
@@ -481,7 +481,7 @@ class ThreeDimensionalProjection:
 
             vCameraRay = self.VectorSub(triTransformed.p[0], self.Vcamera)
 
-            triViewed=triangle()
+            triViewed=triangle(vec3d(),vec3d(),vec3d(),[vec2d(),vec2d(),vec2d()])
             triViewed.t[0]= triTransformed.t[0]
             triViewed.t[1]= triTransformed.t[1]
             triViewed.t[2]= triTransformed.t[2]
@@ -506,14 +506,14 @@ class ThreeDimensionalProjection:
                 triViewed.t[0]=triTransformed.t[0]
                 triViewed.t[1]=triTransformed.t[1]
                 triViewed.t[2]=triTransformed.t[2]
+
                 triViewed.col=triTransformed.col
 
-                clipped = [triangle() for j in range(2)]
+                clipped = [triangle(vec3d(),vec3d(),vec3d(),[vec2d(),vec2d(),vec2d()]) for j in range(2)]
                 n_clippedTriangles = self.TriangleClipAgainstPlane(vec3d(0, 0, 0.01), vec3d(0, 0, 1),triViewed, clipped)
-                triProjected = triangle()
-
+                triProjected = triangle(vec3d(),vec3d(),vec3d(),[vec2d(),vec2d(),vec2d()])
                 for n in range(n_clippedTriangles):
-                    triProjected=triangle()
+                    triProjected=triangle(vec3d(),vec3d(),vec3d(),[vec2d(),vec2d(),vec2d()])
                     triProjected.p[0]= self.MultiplieMatrixVector(clipped[n].p[0], self.MatProj)
                     triProjected.p[1]= self.MultiplieMatrixVector(clipped[n].p[1], self.MatProj)
                     triProjected.p[2]= self.MultiplieMatrixVector(clipped[n].p[2], self.MatProj)
@@ -522,6 +522,18 @@ class ThreeDimensionalProjection:
                     triProjected.t[2]=clipped[n].t[2]
                     triProjected.id=clipped[n].id
                     triProjected.col=clipped[n].col
+                    triProjected.t[0].u=triProjected.t[0].u/triProjected.p[0].w
+                    triProjected.t[1].u=triProjected.t[1].u/triProjected.p[1].w
+                    triProjected.t[2].u=triProjected.t[2].u/triProjected.p[2].w
+
+                    triProjected.t[0].v=triProjected.t[0].v/triProjected.p[0].w
+                    triProjected.t[1].v=triProjected.t[1].v/triProjected.p[1].w
+                    triProjected.t[2].v=triProjected.t[2].v/triProjected.p[2].w
+
+                    triProjected.t[0].w=1/triProjected.p[0].w
+                    triProjected.t[1].w=1/triProjected.p[1].w
+                    triProjected.t[2].w=1/triProjected.p[2].w
+
                     triProjected.p[0] = self.Vector_Div(triProjected.p[0], triProjected.p[0].w);
                     triProjected.p[1] = self.Vector_Div(triProjected.p[1], triProjected.p[1].w);
                     triProjected.p[2] = self.Vector_Div(triProjected.p[2], triProjected.p[2].w);
@@ -542,20 +554,19 @@ class ThreeDimensionalProjection:
                     triProjected.p[1].y *= 0.5 * self.height
                     triProjected.p[2].x *= 0.5 * self.width
                     triProjected.p[2].y *= 0.5 * self.height
-
                     trisToProject.tris.append(triProjected)
-
         trisToProject.tris = sorted(trisToProject.tris, reverse=True, key=lambda tri: (tri.p[0].z + tri.p[1].z + tri.p[2].z) / 3)
 
         for triToRaster in trisToProject.tris:
-            clipped=[triangle(),triangle()]
+
+            clipped=[triangle(vec3d(),vec3d(),vec3d(),[vec2d(),vec2d(),vec2d()]),triangle(vec3d(),vec3d(),vec3d(),[vec2d(),vec2d(),vec2d()])]
             listTriangles=[]
             listTriangles.append(triToRaster)
             nNewTriangles=1
             for p in range(0,4):
                 nTrisToAdd=0
                 while(nNewTriangles>0):
-                    clipped=[triangle(),triangle()]
+                    clipped=[triangle(vec3d(),vec3d(),vec3d(),[vec2d(),vec2d(),vec2d()]),triangle(vec3d(),vec3d(),vec3d(),[vec2d(),vec2d(),vec2d()])]
 
                     test = listTriangles[0]
                     listTriangles.pop(0)
@@ -574,8 +585,9 @@ class ThreeDimensionalProjection:
                 nNewTriangles=len(listTriangles)
 
             for t in listTriangles:
+
                 self.TexturedTriangle(int(t.p[0].x), int(t.p[0].y), t.t[0].u, t.t[0].v, int(t.p[1].x), int(t.p[1].y), t.t[1].u, t.t[1].v,
-                                     int(t.p[2].x), int(t.p[2].y), t.t[2].u, t.t[2].v, triangleTexture)
+                                     int(t.p[2].x), int(t.p[2].y), t.t[2].u, t.t[2].v,t.t[0].w,t.t[1].w,t.t[2].w,triangleTexture)
 
 
                 #
@@ -622,40 +634,46 @@ class ThreeDimensionalProjection:
 
         matCamera = self.MatrixPointAt(self.Vcamera, vTarget, vUp)
         self.MatView = self.Matrix_QuickInverse(matCamera)
-    def TexturedTriangle(self,x1,y1,u1,v1,x2,y2,u2,v2,x3,y3,u3,v3,tex):
+    def TexturedTriangle(self,x1,y1,u1,v1,x2,y2,u2,v2,x3,y3,u3,v3,w1,w2,w3,tex):
 
         if(y2<y1):
             y1,y2=y2,y1
             x1,x2=x2,x1
             u1,u2=u2,u1
             v1,v2=v2,v1
+            w1,w2=w2,w1
         if(y3<y1):
             y1,y3=y3,y1
             x1,x3=x3,x1
             u1,u3=u3,u1
             v1,v3=v3,v1
+            w1,w3=w3,w1
         if(y3<y2):
             y2,y3=y3,y2
             x2,x3=x3,x2
             u2,u3=u3,u2
             v2,v3=v3,v2
+            w2,w3=w3,w2
 
         dy1=y2-y1
         dx1=x2-x1
 
         dv1=v2-v1
         du1=u2-u1
+        dw1=w2-w1
 
         dy2=y3-y1
         dx2=x3-x1
 
         dv2=v3-v1
         du2=u3-u1
+        dw2=w3-w1
 
         dax_step=0;dbx_step=0
         du1_step=0;dv1_step=0
         du2_step=0;dv2_step=0
-        tex_u=0;tex_v=0
+        dw1_step=0;dw2_step=0
+        tex_u=0;tex_v=0;tex_w=0
         if dy1!=0:
             dax_step=dx1/abs(dy1)
         if dy2!=0:
@@ -665,10 +683,14 @@ class ThreeDimensionalProjection:
             du1_step=du1/abs(dy1)
         if dy1!=0:
             dv1_step=dv1/abs(dy1)
+        if dy1!=0:
+            dw1_step=dw1/abs(dy1)
         if dy2!=0:
             du2_step=du2/abs(dy2)
         if dy2!=0:
             dv2_step=dv2/abs(dy2)
+        if dy2!=0:
+            dw2_step=dw2/abs(dy2)
         if dy1!=0:
 
             for i in range(int(y1),int(y2)+1):
@@ -677,14 +699,19 @@ class ThreeDimensionalProjection:
 
                 tex_su=u1+(i-y1)*du1_step
                 tex_sv = v1 + (i - y1) * dv1_step
+                tex_sw = w1 + (i - y1) * dw1_step
+
 
                 tex_eu=u1+(i-y1)*du2_step
                 tex_ev = v1 + (i - y1) * dv2_step
+                tex_ew = w1 + (i - y1) * dw2_step
+
                 if ax>bx:
                     ax,bx=bx,ax
                     tex_su,tex_eu=tex_eu,tex_su
                     tex_sv, tex_ev = tex_ev, tex_sv
-
+                    tex_sw,tex_ew=tex_ew,tex_sw
+                tex_w=tex_sw
                 tex_u=tex_su
                 tex_v=tex_sv
                 if(bx!=ax):
@@ -694,23 +721,27 @@ class ThreeDimensionalProjection:
                     for j in range(int(ax),int(bx)):
                         tex_u=(1-t)*tex_su+t*tex_eu
                         tex_v= (1 - t) * tex_sv + t * tex_ev
-                        self.TwoD.drawPixel(j,i,tex.GetColour(tex_u,tex_v))
+                        tex_w= (1 - t) * tex_sw + t * tex_ew
+                        self.TwoD.drawPixel(j,i,tex.GetColour(tex_u/tex_w,tex_v/tex_w))
                         t+=tstep
 
         dy1=y3-y2
         dx1=x3-x2
         du1=u3-u2
         dv1=v3-v2
+        dw1=w3-w2
 
         if dy1!=0:
             dax_step=dx1/abs(dy1)
         if dy2!=0:
             dbx_step = dx2 /abs(dy2)
-        du1_step=0;dv1_step=0
+        du1_step=0;dv1_step=0;dw1_step=0
         if dy1!=0:
             du1_step=du1/abs(dy1)
         if dy1!=0:
             dv1_step=dv1/abs(dy1)
+        if dy1!=0:
+            dw1_step=dw1/abs(dy1)
         if dy1!=0:
             for i in range(int(y2),int(y3)+1):
                 ax=int(x2+(i-y2)*dax_step)
@@ -718,15 +749,18 @@ class ThreeDimensionalProjection:
 
                 tex_su=u2+(i-y2)*du1_step
                 tex_sv = v2 + (i - y2) * dv1_step
+                tex_sw=w2 + (i - y2) * dw1_step
                 tex_eu=u1+(i-y1)*du2_step
-
+                tex_ew=w1+(i-y1)*dw2_step
                 tex_ev = v1 + (i - y1) * dv2_step
                 if ax>bx:
                     ax,bx=bx,ax
                     tex_su,tex_eu=tex_eu,tex_su
                     tex_sv, tex_ev = tex_ev, tex_sv
+                    tex_sw,tex_ew=tex_ew,tex_sw
                 tex_u=tex_su
                 tex_v=tex_sv
+                tex_w=tex_sw
                 if(ax!=bx):
                     tstep = 1 / (bx - ax)
                 t=0
@@ -734,7 +768,9 @@ class ThreeDimensionalProjection:
                     for j in range(int(ax),int(bx)):
                         tex_u= (1-t)*tex_su+ t*tex_eu
                         tex_v= (1 - t) * tex_sv + t * tex_ev
-                        self.TwoD.drawPixel(j,i,tex.GetColour(tex_u,tex_v))
+                        tex_w= (1 - t) * tex_sw + t * tex_ew
+
+                        self.TwoD.drawPixel(j,i,tex.GetColour(tex_u/tex_w,tex_v/tex_w ))
                         t+=tstep
     def Update(self):
         TwoD.ClearAll()
@@ -753,7 +789,7 @@ class ThreeDimensionalProjection:
 
         self.ProjectTriangles()
         pygame.display.flip()
-        self.DeltaTime=clock.tick(60)/1000
+        self.DeltaTime=clock.tick(1000)/1000
 
 
     def Main(self):
