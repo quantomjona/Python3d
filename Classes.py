@@ -1,18 +1,19 @@
 from PIL import Image
-
+from dataclasses import dataclass
 class sprite:
     def __init__(self,image):
         self.image=image
         self.pix=self.image.load()
         self.width=self.image.width
         self.height=self.image.height
+        self.getAllPixels=[[self.image.getpixel([i,j]) for i in range(self.width)]for j in range(self.height)]
     def GetColour(self,i,j):
 
-        return self.image.getpixel([i*self.width-1,j*self.height-1])
+        return self.getAllPixels[int(j*self.height-1)][int(i*self.width-1)]
 
 
 class vec2d:
-    def __init__(self,u:float=0,v:float=0,w=1):
+    def __init__(self,u,v,w):
         self.u=u
         self.v=v
         self.w=w
@@ -20,7 +21,7 @@ class vec2d:
         return str((self.u,self.v))
 
 class vec3d:
-    def __init__(self, x:float=0, y:float=0, z:float=0):
+    def __init__(self, x, y, z):
         self.x = x
         self.y = y
         self.z = z
@@ -40,8 +41,9 @@ class vec3d:
 
 
 
+
 class triangle:
-    def __init__(self, p1, p2, p3,t,sym="gray75", Color="White",id=0):
+    def __init__(self, p1, p2, p3,t1,t2,t3,sym="gray75", Color="White",id=0):
         P1=p1
         P2=p2
         P3=p3
@@ -51,7 +53,7 @@ class triangle:
             P2=vec3d(p2[0],p2[1],p2[2])
         if(type(p3)==list):
             P3=vec3d(p3[0],p3[1],p3[2])
-        self.t=t[:]
+        self.t=[t1,t2,t3]
         self.p = [P1, P2, P3]
         self.sym = sym
         self.col = Color
@@ -59,6 +61,9 @@ class triangle:
 
     def __str__(self):
         return str((str(self.p[0]),str(self.p[1]),str(self.p[2]),str(self.t[0]),str(self.t[1]),str(self.t[2])))
+
+
+
 
 
 
