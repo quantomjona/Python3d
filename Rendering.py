@@ -12,42 +12,36 @@ pygame.init()
 
 
 running = True
-def getIfromRGB(rgb):
-    red = rgb[0]
-    green = rgb[1]
-    blue = rgb[2]
-
-    RGBint = (red<<16) + (green<<8) + blue
-    return RGBint
 
 
 def RgbToHex(rgb):
     return "#%02x%02x%02x" % rgb
-img=Image.open("download (11).jpg")
+img=Image.open("High.png ")
 triangleTexture=sprite(img)
 triangles=mesh()
-triangles.tris=[
-
-		triangle([0.0, 0.0, 0.0],    [0.0, 1.0, 0.0],    [1.0, 1.0, 0.0],Color="cyan", t1=vec2d(0,1,1),t2=vec2d(0,0,1),t3=vec2d(1,0,1)),
-		triangle([0.0, 0.0, 0.0],    [1.0, 1.0, 0.0],    [1.0, 0.0, 0.0],Color="green",t1=vec2d(0,1,1),t2=vec2d(1,0,1),t3=vec2d(1,1,1)),
-		triangle([1.0, 0.0, 0.0]    ,[1.0, 1.0, 0.0],    [1.0, 1.0, 1.0 ],Color="red", t1=vec2d(0,1,1),t2=vec2d(0,0,1),t3=vec2d(1,0,1))
-
-		,triangle([1.0, 0.0, 0.0],    [1.0, 1.0, 1.0],    [1.0, 0.0, 1.0 ],Color="purple",t1=vec2d(0,1,1),t2=vec2d(1,0,1),t3=vec2d(1,1,1))
-		,triangle([1.0, 0.0, 1.0],    [1.0, 1.0, 1.0],    [0.0, 1.0, 1.0 ],Color="blue", t1=vec2d(0,1,1),t2=vec2d(0,0,1),t3=vec2d(1,0,1))
-		,triangle([1.0, 0.0, 1.0],    [0.0, 1.0, 1.0],   [ 0.0, 0.0, 1.0 ],Color="yellow",t1=vec2d(0,1,1),t2=vec2d(1,0,1),t3=vec2d(1,1,1))
-
-
-		,triangle([0.0, 0.0, 1.0],    [0.0, 1.0, 1.0],    [0.0, 1.0, 0.0 ],Color="orange", t1=vec2d(0,1,1),t2=vec2d(0,0,1),t3=vec2d(1,0,1))
-		,triangle([0.0, 0.0, 1.0],    [0.0, 1.0, 0.0],    [0.0, 0.0, 0.0],Color="pink",t1=vec2d(0,1,1),t2=vec2d(1,0,1),t3=vec2d(1,1,1))
-
-        ,
-		triangle([0.0, 1.0, 0.0],   [0.0, 1.0, 1.0], [   1.0, 1.0, 1.0 ],Color="green", t1=vec2d(0,1,1),t2=vec2d(0,0,1),t3=vec2d(1,0,1)),
-		triangle([0.0, 1.0, 0.0],    [1.0, 1.0, 1.0],   [ 1.0, 1.0, 0.0 ],vec2d(0,1,1),vec2d(1,0,1),vec2d(1,1,1)),
-
-
-		 triangle([1.0, 0.0, 1.0],    [0.0, 0.0, 1.0],   [ 0.0, 0.0, 0.0 ],vec2d(0,1,1),vec2d(0,0,1),vec2d(1,0,1)),
-		 triangle([1.0, 0.0, 1.0],   [ 0.0, 0.0, 0.0],   [ 1.0, 0.0, 0.0],vec2d(0,1,1),vec2d(1,0,1),vec2d(1,1,1))
-]
+triangles.LoadFromObjectFile("ArtisansHub.obj",True)
+# triangles.tris=[
+#
+# 		triangle([0.0, 0.0, 0.0],    [0.0, 1.0, 0.0],    [1.0, 1.0, 0.0],Color="cyan", t1=vec2d(0,1,1),t2=vec2d(0,0,1),t3=vec2d(1,0,1)),
+# 		triangle([0.0, 0.0, 0.0],    [1.0, 1.0, 0.0],    [1.0, 0.0, 0.0],Color="green",t1=vec2d(0,1,1),t2=vec2d(1,0,1),t3=vec2d(1,1,1)),
+# 		triangle([1.0, 0.0, 0.0]    ,[1.0, 1.0, 0.0],    [1.0, 1.0, 1.0 ],Color="red", t1=vec2d(0,1,1),t2=vec2d(0,0,1),t3=vec2d(1,0,1))
+#
+# 		,triangle([1.0, 0.0, 0.0],    [1.0, 1.0, 1.0],    [1.0, 0.0, 1.0 ],Color="purple",t1=vec2d(0,1,1),t2=vec2d(1,0,1),t3=vec2d(1,1,1))
+# 		,triangle([1.0, 0.0, 1.0],    [1.0, 1.0, 1.0],    [0.0, 1.0, 1.0 ],Color="blue", t1=vec2d(0,1,1),t2=vec2d(0,0,1),t3=vec2d(1,0,1))
+# 		,triangle([1.0, 0.0, 1.0],    [0.0, 1.0, 1.0],   [ 0.0, 0.0, 1.0 ],Color="yellow",t1=vec2d(0,1,1),t2=vec2d(1,0,1),t3=vec2d(1,1,1))
+#
+#
+# 		,triangle([0.0, 0.0, 1.0],    [0.0, 1.0, 1.0],    [0.0, 1.0, 0.0 ],Color="orange", t1=vec2d(0,1,1),t2=vec2d(0,0,1),t3=vec2d(1,0,1))
+# 		,triangle([0.0, 0.0, 1.0],    [0.0, 1.0, 0.0],    [0.0, 0.0, 0.0],Color="pink",t1=vec2d(0,1,1),t2=vec2d(1,0,1),t3=vec2d(1,1,1))
+#
+#         ,
+# 		triangle([0.0, 1.0, 0.0],   [0.0, 1.0, 1.0], [   1.0, 1.0, 1.0 ],Color="green", t1=vec2d(0,1,1),t2=vec2d(0,0,1),t3=vec2d(1,0,1)),
+# 		triangle([0.0, 1.0, 0.0],    [1.0, 1.0, 1.0],   [ 1.0, 1.0, 0.0 ],vec2d(0,1,1),vec2d(1,0,1),vec2d(1,1,1)),
+#
+#
+# 		 triangle([1.0, 0.0, 1.0],    [0.0, 0.0, 1.0],   [ 0.0, 0.0, 0.0 ],vec2d(0,1,1),vec2d(0,0,1),vec2d(1,0,1)),
+# 		 triangle([1.0, 0.0, 1.0],   [ 0.0, 0.0, 0.0],   [ 1.0, 0.0, 0.0],vec2d(0,1,1),vec2d(1,0,1),vec2d(1,1,1))
+# ]
 clock = pygame.time.Clock()
 
 def LuminanceToColor(lum):
@@ -138,6 +132,7 @@ class TowDimensionsGeometry:
         self.polygonList = []
         self.screen = pygame.display.set_mode((1280, 720),flags=DOUBLEBUF)
         self.pixels=pygame.surfarray.pixels2d(self.screen)
+        self.deafault=tuple(tuple(0 for i in range(720))for j in range(1280))
         self.width=self.screen.get_width()
         self.height=self.screen.get_height()
     # def DrawLine(self, point1, point2):
@@ -155,7 +150,7 @@ class TowDimensionsGeometry:
             self.Canvas.polygon(points=[[point1.x,point1.y],[point2.x,point2.y],[point3.x,point3.y]],surface=self.screen,color=Outline,width=w)
     def drawPixel(self,i,j,Color):
 
-        self.pixels[i][j]=getIfromRGB(Color)
+        self.pixels[i][j]=Color
     def RenderPolygonsFromList(self):
         """
 
@@ -165,6 +160,7 @@ class TowDimensionsGeometry:
 
     def ClearAll(self):
         self.screen.fill("black")
+
 #region
 
 class ThreeDimensionalProjection:
@@ -355,7 +351,7 @@ class ThreeDimensionalProjection:
 
 
     def TriangleClipAgainstPlane(self, plane_p, plane_n, In_tri, out_tris):
-        in_tri=deepcopy(In_tri)
+        in_tri=triangle(copy.copy(In_tri.p[0]),copy.copy(In_tri.p[1]),copy.copy(In_tri.p[2]),copy.copy(In_tri.t[0]),copy.copy(In_tri.t[1]),copy.copy(In_tri.t[2]))
         plane_n=self.NormalizeVector(plane_n)
         dist = lambda p: plane_n.x * p.x + plane_n.y * p.y + plane_n.z * p.z - self.DotProduct(plane_n, plane_p)
 
@@ -420,7 +416,7 @@ class ThreeDimensionalProjection:
         if (nInsidePointCount == 1 and nOutsidePointCount == 2):
             t=0
             out_tris[0].p[0] = insidePoints[0]
-            out_tris[0].t[0] = InsideTex[0]
+            out_tris[0].t[0] = copy.copy(InsideTex[0])
             [out_tris[0].p[1],t] = self.VectorIntersectPlane(plane_p, plane_n, insidePoints[0], OutsidePoints[0])
             out_tris[0].t[1].u=t*(OutsideTex[0].u-InsideTex[0].u)+InsideTex[0].u
             out_tris[0].t[1].v=t*(OutsideTex[0].v-InsideTex[0].v)+InsideTex[0].v
@@ -438,9 +434,9 @@ class ThreeDimensionalProjection:
         if nInsidePointCount == 2 and nOutsidePointCount == 1:
             t=0
             out_tris[0].p[0]=insidePoints[0]
-            out_tris[0].t[0]=InsideTex[0]
+            out_tris[0].t[0]=copy.copy(InsideTex[0])
             out_tris[0].p[1] =insidePoints[1]
-            out_tris[0].t[1] = InsideTex[1]
+            out_tris[0].t[1] = copy.copy(InsideTex[1])
             [out_tris[0].p[2],t] = self.VectorIntersectPlane(plane_p, plane_n, insidePoints[0], OutsidePoints[0])
             out_tris[0].t[2].u=t*(OutsideTex[0].u-InsideTex[0].u)+InsideTex[0].u
             out_tris[0].t[2].v=t*(OutsideTex[0].v-InsideTex[0].v)+InsideTex[0].v
@@ -448,7 +444,7 @@ class ThreeDimensionalProjection:
 
 
             out_tris[1].p[0] = insidePoints[1]
-            out_tris[1].t[0]=InsideTex[1]
+            out_tris[1].t[0]=copy.copy(InsideTex[1])
             [out_tris[1].p[1],t] = self.VectorIntersectPlane(plane_p, plane_n, insidePoints[0], OutsidePoints[0])
             out_tris[1].t[1].u=t*(OutsideTex[0].u-InsideTex[0].u)+InsideTex[0].u
             out_tris[1].t[1].v=t*(OutsideTex[0].v-InsideTex[0].v)+InsideTex[0].v
@@ -534,6 +530,8 @@ class ThreeDimensionalProjection:
                     triProjected.t[2]=clipped[n].t[2]
                     triProjected.id=clipped[n].id
                     triProjected.col=clipped[n].col
+
+
                     triProjected.t[0].u=triProjected.t[0].u/triProjected.p[0].w
                     triProjected.t[1].u=triProjected.t[1].u/triProjected.p[1].w
                     triProjected.t[2].u=triProjected.t[2].u/triProjected.p[2].w
@@ -603,7 +601,6 @@ class ThreeDimensionalProjection:
 
 
                 #
-                self.TwoD.DrawTriangle(t.p[0],t.p[1],t.p[2],Outline="red",fill=True,Color="black",stipple='',w=10)
 
 
     def MakeRotationZ(self, fTheta):
@@ -684,23 +681,16 @@ class ThreeDimensionalProjection:
         du2_step=0;dv2_step=0
         dw1_step=0;dw2_step=0
         tex_u=0;tex_v=0;tex_w=0
-        if dy1!=0:
-            dax_step=dx1/abs(dy1)
-        if dy2!=0:
-            dbx_step = dx2 /abs(dy2)
+        if dy1!=0:dax_step=dx1/abs(dy1)
+        if dy2!=0:dbx_step = dx2 /abs(dy2)
 
-        if dy1!=0:
-            du1_step=du1/abs(dy1)
-        if dy1!=0:
-            dv1_step=dv1/abs(dy1)
-        if dy1!=0:
-            dw1_step=dw1/abs(dy1)
-        if dy2!=0:
-            du2_step=du2/abs(dy2)
-        if dy2!=0:
-            dv2_step=dv2/abs(dy2)
-        if dy2!=0:
-            dw2_step=dw2/abs(dy2)
+        if dy1!=0:du1_step=du1/abs(dy1)
+        if dy1!=0:dv1_step=dv1/abs(dy1)
+        if dy1!=0:dw1_step=dw1/abs(dy1)
+
+        if dy2!=0:du2_step=du2/abs(dy2)
+        if dy2!=0:dv2_step=dv2/abs(dy2)
+        if dy2!=0:dw2_step=dw2/abs(dy2)
         if dy1!=0:
 
             for i in range(int(y1),int(y2)+1):
@@ -740,12 +730,12 @@ class ThreeDimensionalProjection:
         du1=u3-u2
         dv1=v3-v2
         dw1=w3-w2
+        du1_step=0;dv1_step=0
 
         if dy1!=0:
             dax_step=dx1/abs(dy1)
         if dy2!=0:
             dbx_step = dx2 /abs(dy2)
-        du1_step=0;dv1_step=0;dw1_step=0
         if dy1!=0:
             du1_step=du1/abs(dy1)
         if dy1!=0:
@@ -788,9 +778,12 @@ class ThreeDimensionalProjection:
     def Update(self):
         TwoD.ClearAll()
 
-
+        running=True
 
         # self.fTheta += 1 * 1 / 300
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                running = False
         self.matTrans = self.MatrixMakeTranslation(1, 1, 16)
         self.matWorld = [[0 for i in range(4)] for j in range(4)]
         self.matRotZ = self.MakeRotationZ(self.fTheta)
@@ -803,12 +796,13 @@ class ThreeDimensionalProjection:
         self.ProjectTriangles()
         pygame.display.flip()
         self.DeltaTime=clock.tick(1000)/1000
+        return running
 
 
     def Main(self):
-
-        while True:
-            self.Update()
+        running=True
+        while running:
+            running=self.Update()
         pygame.quit()
 
 TwoD = TowDimensionsGeometry()

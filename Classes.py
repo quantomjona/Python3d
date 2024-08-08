@@ -1,15 +1,29 @@
 from PIL import Image
 from dataclasses import dataclass
+def stoi(Str):
+    output=""
+    for char in Str:
+        if char.isdigit():
+            output+=char
+    return int(output)
+def getIfromRGB(rgb):
+    red = rgb[0]
+    green = rgb[1]
+    blue = rgb[2]
+
+    RGBint = (red<<16) + (green<<8) + blue
+    return RGBint
+
 class sprite:
     def __init__(self,image):
         self.image=image
         self.pix=self.image.load()
         self.width=self.image.width
         self.height=self.image.height
-        self.getAllPixels=[[self.image.getpixel([i,j]) for i in range(self.width)]for j in range(self.height)]
+        self.getAllPixels=[[getIfromRGB(self.image.getpixel([i,j])) for i in range(self.width)]for j in range(self.height)]
     def GetColour(self,i,j):
 
-        return self.getAllPixels[int(j*self.height-1)][int(i*self.width-1)]
+        return self.getAllPixels[int(j*self.height)-1][int(i*self.width)-1]
 
 
 class vec2d:
@@ -75,20 +89,53 @@ class mesh:
         for tri in self.tris:
             Output.append(str(tri))
         return str(Output)
-    def LoadFromObjectFile(self, sFilename):
+    def LoadFromObjectFile(self, sFilename,has_Texture=False):
         count=0
         with open(sFilename, 'r') as f:
             verts = []
+            texs=[]
             for line in f:
                 if line[0] == 'v':
-                    v = vec3d()
-                    v.x, v.y, v.z = map(float, line[1:].split())
-                    verts.append(v)
-                elif line[0] == 'f':
+                    if(line[1]=='t'):
 
-                    f = list(map(int, line[1:].split()))
-                    self.tris.append(triangle(verts[f[0] - 1], verts[f[1] - 1], verts[f[2] - 1], '', 0,count))
-                    count+=1
+                        v=vec2d(0,0,0)
+                        v.u,v.v=map(float, line[2:].split())
+                        texs.append(v)
+                    else:
+                        v = vec3d(0,0,0)
+                        v.x, v.y, v.z = map(float, line[1:].split())
+                        verts.append(v)
+                if(not has_Texture):
+                    if line[0] == 'f':
+
+                        f = list(map(int, line[1:].split()))
+                        self.tris.append(triangle(verts[f[0] - 1], verts[f[1] - 1], verts[f[2] - 1],vec2d(0,0,0),vec2d(0,0,0)))
+                        count+=1
+                else:
+                    if line[0] == 'f':
+                        new_lines=[line]
+                        vertsCount=line.count(" ")
+
+                        if vertsCount==4:
+                            vertTextureGroups=[]
+                            for vert in line.split(" "):
+
+                                if(vert!="f"):
+                                    vertTextureGroups.append(vert)
+                            vertTextureGroups[3]=vertTextureGroups[3][:-1]
+                            new_lines=[f"f {vertTextureGroups[1]} {vertTextureGroups[3]} {vertTextureGroups[0]}",f"f {vertTextureGroups[1]} {vertTextureGroups[3]} {vertTextureGroups[2]}"]
+                        for Line in new_lines:
+                            lineposcounter=1
+                            tokens=["","","","","",""]
+                            tokencount=-1
+
+
+                            for char in Line[lineposcounter:]:
+                                if char==" " or char=="/":
+                                    tokencount+=1
+                                else:
+                                    tokens[tokencount]+=char
+                            self.tris.append(triangle(verts[stoi(tokens[0])-1],verts[stoi(tokens[2])-1],verts[stoi(tokens[4])-1],t1=texs[stoi(tokens[1])-1],t2=texs[stoi(tokens[3])-1],t3=texs[stoi(tokens[5])-1]))
         return True
 
 class mat4x4:
